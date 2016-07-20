@@ -8,6 +8,8 @@ First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polyme
 
 ## Viewing Your Application
 
+After cloning, run `bower install` to fetch dependencies, then:
+
 ```
 $ polymer serve
 ```
