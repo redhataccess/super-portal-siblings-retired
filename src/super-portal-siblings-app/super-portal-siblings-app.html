@@ -1,0 +1,57 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/app-route/app-location.html">
+<link rel="import" href="../../bower_components/app-route/app-route.html">
+<link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../bower_components/iron-selector/iron-selector.html">
+
+<dom-module id="super-portal-siblings-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <app-location route="{{route}}"></app-location>
+    <app-route
+      route="{{route}}"
+      pattern="/:page"
+      data="{{routeData}}"
+      tail="{{subroute}}"></app-route>
+
+      <iron-pages role="main" selected="[[page]]" attr-for-selected="name">
+        <spsa-game name="game"></spsa-game>
+        <spsa-leaderboard name="leaderboard"></spsa-leaderboard>
+      </iron-pages>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'super-portal-siblings-app',
+
+      properties: {
+        page: {
+          type: String,
+          reflectToAttribute: true,
+          observer: '_pageChanged'
+        }
+      },
+
+      observers: [
+        '_routePageChanged(routeData.page)'
+      ],
+
+      _routePageChanged: function(page) {
+        this.page = page || 'game';
+      },
+
+      _pageChanged: function (page) {
+        this.importHref(
+          this.resolveUrl('spsa-' + page + '.html'), null, null, true
+        );
+      }
+
+    });
+  </script>
+</dom-module>
