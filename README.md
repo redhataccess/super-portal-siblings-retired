@@ -31,6 +31,17 @@ from:
 $ polymer serve build/bundled
 ```
 
+## Editing the map
+
+First, install Tiled.  On Fedora, `dnf install tiled`.  Or grab an [OS X or
+Windows download](https://thorbjorn.itch.io/tiled).
+
+Launch Tiled and open
+`src/super-portal-siblings-app/game/assets/map/testmap.tmx`.  Edit the map,
+save your changes, and export (`Ctrl+e`) in JSON format to
+`src/super-portal-siblings-app/game/assets/map/testmap.json`.  Refresh the
+game, and your changes will be reflected.
+
 ## Running Tests
 
 ```

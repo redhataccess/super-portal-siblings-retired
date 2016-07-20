@@ -10,6 +10,8 @@ Spsa.Boot.prototype = {
   create: function () {
     this.game.stage.backgroundColor = '#787878';
 
+    this.game.add.plugin(Phaser.Plugin.Tiled);
+
     this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 
     this.scale.pageAlignHorizontally = true;
