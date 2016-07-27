@@ -16,7 +16,7 @@ Spsa.Game.prototype = {
     // this.layer = this.map.createLayer('World1');
     // this.layer.resizeWorld();
 
-    this.player = this.game.add.sprite(100, 83, 'mario');
+    this.player = this.game.add.sprite(30, 10, 'mario');
     this.game.physics.p2.enable(this.player);
     this.player.body.fixedRotation = true;
     this.player.body.setRectangle(20, 50, 0, 0); // resize hit box to better reflect mario's actual size on screen
